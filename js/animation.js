@@ -32,11 +32,25 @@ $(document).ready(function(){
 		$('#stream').prepend(
 			'<div class="tweet"><div class="content"><img class="avatar" src="' + pic + '" /><strong class="fullname">' + userName + '</strong><span class="username">' + userName + '</span><p class="tweet-text">' + tweet + '</p><div class="tweet-actions"><ul><li><span class="icon action-reply"></span> Reply</li><li><span class="icon action-retweet"></span> Retweet</li><li><span class="icon action-favorite"></span> Favorite</li><li><span class="icon action-more"></span> More</li></ul></div>'
 			);
-	})
+		
+	});
 
-//click into text box
-//every keystroke
-//subtract 1 from charcount
+
+	$('.tweet-actions').hide();
+	$('.tweet').on('mouseenter', function (){
+		$('.tweet-actions', this).show();
+	});
+
+	$('.tweet').on('mouseleave', function (){
+		$('.tweet-actions', this).hide();
+	});
+
+	$('.stats').hide();
+
+	$('.content').on('click', function(){
+		$('.stats', this).toggle();
+	});
+
 
 
 
