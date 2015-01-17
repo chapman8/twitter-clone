@@ -31,7 +31,7 @@ $(document).ready(function(){
 		var pic = $('#profile-summary .avatar').attr('src');
 		$('#stream').prepend(
 			'<div class="tweet"><div class="content"><img class="avatar" src="' + pic + '" /><strong class="fullname">' + userName + '</strong><span class="username">' + userName + '</span><p class="tweet-text">' + tweet + '</p><div class="tweet-actions"><ul><li><span class="icon action-reply"></span> Reply</li><li><span class="icon action-retweet"></span> Retweet</li><li><span class="icon action-favorite"></span> Favorite</li><li><span class="icon action-more"></span> More</li></ul></div>'
-			);
+		);
 		
 	});
 
