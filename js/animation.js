@@ -37,6 +37,9 @@ $(document).ready(function(){
 
 
 	$('.tweet-actions').hide();
+	$('.stats').hide();
+	$('.reply').hide();
+
 	$('.tweet').on('mouseenter', function (){
 		$('.tweet-actions', this).show();
 	});
@@ -47,8 +50,8 @@ $(document).ready(function(){
 
 	$('.stats').hide();
 
-	$('.content').on('click', function(){
-		$('.stats', this).toggle();
+	$('.tweet').on('click', function(){
+		$('.stats, .reply', this).toggle();
 	});
 
 
