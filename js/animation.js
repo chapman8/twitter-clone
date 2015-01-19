@@ -73,7 +73,7 @@ $(document).ready(function(){
 	$('.stats').hide();
 
 	$('.tweet').on('click', function(){
-		$('.stats, .reply', this).toggle();
+		$('.stats, .reply', this).slideToggle();
 	});
 
 
