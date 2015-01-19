@@ -2,11 +2,14 @@ $(document).ready(function(){
 
 	$('#tweet-controls').hide();
 
-	$('.tweet-compose').on('click', function(){
+
+//Enlarge text box
+	$('.tweet-compose').on('focus', function(){
 		$(this).css('height','5em');
 		$('#tweet-controls').show();
 	});
 
+//Char count decresase and turn red at < 10 and deactivate submit at< 0.
 	$('.tweet-compose').keyup(function(){
 		var text140 = $('.tweet-compose').val()
 		var textLeft = 140 - text140.length;
@@ -25,6 +28,8 @@ $(document).ready(function(){
 		  }
 	});
 
+
+//Post new tweet
 	$('#tweet-submit').on('click', function(){
 		var tweet = $('.tweet-compose').val();
 		var userName = $('#profile-summary p').text() + ' ';
@@ -34,6 +39,23 @@ $(document).ready(function(){
 		);
 		
 	});
+
+	/* Or:
+
+	var editNewTweet - function(element) {
+		var tweet = $('.tweet-compose').val();
+		var userName = $('#profile-summary p').text() + ' ';
+		var pic = $('#profile-summary .avatar').attr('src');
+		$(element).find(',fullname').text(userName);
+	}
+
+	var newTweet = $('.tweet').first().clone(true); //Create a clone of the latest tweet. 
+	$('#stream').prepend(newTweet); //insert a clone of the first tweet
+	editNewTweet(newTweet);
+
+	$('#tweet-content > /tweet-compse').val("");
+	$('#tweet-content > .tweet-compse').trigger('blur');
+	*/
 
 
 	$('.tweet-actions').hide();
